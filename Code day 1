@@ -1,0 +1,28 @@
+
+//FightCode can only understand your robot
+//if its class is called Robot
+var Robot = function(robot) {
+
+};
+
+Robot.prototype.onIdle = function(ev) {
+    var robot = ev.robot;
+    robot.ahead(150);
+    robot.rotateCannon(360);
+    robot.back(150);
+    robot.rotateCannon(360);
+  	robot.turn(20);
+
+};
+
+Robot.prototype.onScannedRobot = function(ev) {
+    var robot = ev.robot;
+    robot.fire(1);
+
+};
+
+Robot.prototype.onHitBullet = function(ev) {
+  var robot = ev.robot; 
+  robot.turn (90 - ev.bulletBrearing);
+  robot.clone();
+};
