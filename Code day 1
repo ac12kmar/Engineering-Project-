@@ -25,4 +25,5 @@ Robot.prototype.onHitBullet = function(ev) {
   var robot = ev.robot; 
   robot.turn (90 - ev.bulletBrearing);
   robot.clone();
+  
 };
